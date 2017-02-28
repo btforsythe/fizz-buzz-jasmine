@@ -1,15 +1,18 @@
 function say(number) {
 	
-	if (isFizz(number) && isBuzz(number)) {
-		return "FizzBuzz";
-	}
-
-	if (isFizz(number)) {
-		return "Fizz";
-	}
+	var returnValue = isFizz(number)? "Fizz": "";
 
 	if(isBuzz(number)) {
-		return "Buzz";
+		returnValue += "Buzz";
+		// same as below
+		// returnValue = returnValue + "Buzz";
+	}
+	// I could do this with the ternary operator
+	// returnValue += (isBuzz(number)? "Buzz": "");
+
+	// non-empty strings are "truthy"
+	if(returnValue) {
+		return returnValue;
 	}
 
 	return "" + number;
