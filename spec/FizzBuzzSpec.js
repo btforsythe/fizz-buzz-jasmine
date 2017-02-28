@@ -1,12 +1,17 @@
 describe("FizzBuzz", function() {
 	describe("should return the number for", function() {
 		it("1", function() {
-			var result = say(1);
+
+			var underTest = new FizzBuzzNumber(1);
+
+			var result = underTest.say();
 
 			expect(result).toBe("1");
 		});
 		it("2", function() {
-			var result = say(2);
+			var underTest = new FizzBuzzNumber(2);
+
+			var result = underTest.say();
 
 			expect(result).toBe("2");
 		});
@@ -14,7 +19,9 @@ describe("FizzBuzz", function() {
 
 	describe("should return Fizz for", function() {
 		it("3", function() {
-			var result = say(3);
+			var underTest = new FizzBuzzNumber(3);
+
+			var result = underTest.say();
 
 			expect(result).toBe("Fizz");
 		});

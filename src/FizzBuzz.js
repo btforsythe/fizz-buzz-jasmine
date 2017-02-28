@@ -1,24 +1,26 @@
-function say(number) {
-	
-	if (isFizz(number) && isBuzz(number)) {
-		return "FizzBuzz";
-	}
-
-	if (isFizz(number)) {
-		return "Fizz";
-	}
-
-	if(isBuzz(number)) {
-		return "Buzz";
-	}
-
-	return "" + number;
+function FizzBuzzNumber(number) { // constructor
+	this.number = number;
 }
+FizzBuzzNumber.prototype = {
+	say: function() {
+		if (this.isFizz(this.number) && this.isBuzz(this.number)) {
+			return "FizzBuzz";
+		}
 
-function isFizz(number) {
-	return number%3 == 0;
-}
+		if (this.isFizz(this.number)) {
+			return "Fizz";
+		}
 
-function isBuzz(number) {
-	return number%5 == 0;
+		if(this.isBuzz(this.number)) {
+			return "Buzz";
+		}
+
+		return "" + this.number;
+	},
+	isFizz: function() {
+		return this.number%3 == 0;
+	},
+	isBuzz: function() {
+		return this.number%5 == 0;
+	}
 }
